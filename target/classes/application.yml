@@ -1,0 +1,25 @@
+spring:
+  #数据源和jpa配置
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    #数据库相关的配置url  -SSL连接设置为false
+    url: jdbc:mysql://localhost:3306/seckilldb?characterEncoding=utf8&useSSL=false
+    #配置用户名
+    username: root
+    #配置密码
+    password: root
+    hikari:
+      ## 最小空闲连接数量
+      minimumidle: 5
+      ## 空闲连接存活最大时间，默认600000（10分钟）
+      idleTimeout: 180000
+      ## 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      pool-name: Seckill-HikariCP
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

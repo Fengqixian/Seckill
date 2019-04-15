@@ -24,6 +24,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    open-in-view: true
   redis:
     # Redis数据库索引（默认为0）
     database: 0
@@ -35,5 +36,10 @@ spring:
     password:
     # Redis连接超时时间
     timeout: 3000
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123
 server:
   port: 8081

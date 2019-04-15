@@ -15,7 +15,7 @@ public class GoodsOpertorController {
 
     @RequestMapping(name = "/save")
     public String saveGoods(Goods goods){
-        goodsSecKillService.kill(goods);
-        return "添加商品成功！";
+        Goods rGoods = goodsSecKillService.kill(goods);
+        return rGoods.getGoodsName()+"添加成功！";
     }
 }

@@ -1,6 +1,8 @@
 package com.seckill.service.impl;
 
 import com.seckill.service.RedisTemplateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -10,12 +12,15 @@ import java.util.List;
 @Service
 public class RedisTemplateServiceImpl implements RedisTemplateService {
 
+    private static final Logger log = LoggerFactory.getLogger(RedisTemplateServiceImpl.class);
+
     @Autowired
     private RedisTemplate redisTemplate;
 
 
     @Override
     public void saveString(String key,Object value) {
+        log.debug("Redis save:{key:{},value:{}}",key,value);
         redisTemplate.opsForValue().set(key,value);
     }
 

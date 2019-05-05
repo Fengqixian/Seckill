@@ -36,10 +36,5 @@ spring:
     password:
     # Redis连接超时时间
     timeout: 3000
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: admin
-    password: 123
 server:
-  port: 8081
+  port: 8089
